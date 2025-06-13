@@ -1,0 +1,675 @@
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap');
+
+/* Variáveis de Cores (Bordô Principal) */
+:root {
+    --primary-color: #800000; /* Vermelho Bordô Escuro */
+    --secondary-color: #5C0000; /* Bordô ainda mais escuro para hover */
+    --accent-color: #DAA520; /* Dourado/Goldenrod para um toque de luxo, combina bem com bordô */
+    --text-dark: #2C3E50; /* Cinza escuro para textos */
+    --text-light: #ECF0F1; /* Cinza claro para textos em fundos escuros */
+    --bg-light: #F8F9FA; /* Fundo claro para seções */
+    --bg-dark: #34495E; /* Fundo escuro (footer) */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- Botões --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 45px; /* Tamanho base maior */
+    text-decoration: none;
+    border-radius: 50px; /* Borda bem arredondada */
+    font-weight: 700;
+    font-size: 1.3em; /* Fonte maior */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px); /* Efeito de elevação maior */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35); /* Sombra maior no hover */
+}
+
+/* Classes específicas para cada tipo de botão, mantendo o tamanho e destaque */
+.btn-hero { /* Botão da seção principal */
+    padding: 25px 60px;
+    font-size: 1.6em;
+    margin-top: 40px;
+}
+
+.btn-section-cta { /* Botões que aparecem no final das seções (About, Benefits, Testimonials, FAQ) */
+    margin-top: 60px;
+    padding: 22px 50px;
+    font-size: 1.4em;
+    display: inline-block; /* Garante que fique centralizado se a seção for text-align: center */
+}
+
+.btn-banner-cta { /* Botão do banner CTA */
+    padding: 28px 70px;
+    font-size: 1.8em;
+    font-weight: 900;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.btn-banner-cta:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* --- Títulos de Seção --- */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em; /* Título maior */
+    margin-bottom: 60px;
+    color: var(--text-dark);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px; /* Linha de destaque maior */
+    height: 5px; /* Linha de destaque mais espessa */
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(128, 0, 0, 0.85), rgba(92, 0, 0, 0.85)), url('hero-bg-professional.jpg') no-repeat center center/cover; /* Bordô escuro com maior opacidade */
+    background-attachment: fixed; /* Efeito parallax suave */
+    color: var(--text-light);
+    padding: 220px 0; /* Mais espaçamento */
+    text-align: center;
+    min-height: 90vh; /* Ocupa mais espaço na tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5em; /* Título principal ainda maior */
+    margin-bottom: 30px;
+    line-height: 1.1;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Sombra mais profunda */
+}
+
+.hero-subtitle {
+    font-size: 2em; /* Subtítulo maior */
+    margin-bottom: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 120px 0; /* Mais espaçamento */
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 80px; /* Mais espaço entre texto e imagem */
+    margin-bottom: 80px;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 350px;
+}
+
+.about-text p {
+    font-size: 1.25em; /* Texto maior */
+    margin-bottom: 25px;
+    color: var(--text-dark);
+}
+
+.about-image {
+    width: 380px; /* Imagem maior */
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid var(--primary-color); /* Borda mais espessa */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada */
+    flex-shrink: 0;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Mais espaço entre os itens */
+    margin-top: 60px;
+}
+
+.highlight-item {
+    background-color: var(--bg-light);
+    padding: 35px; /* Mais padding */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid var(--primary-color); /* Borda lateral mais espessa */
+}
+
+.highlight-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+.highlight-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; /* Título do highlight maior */
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.highlight-item .icon {
+    font-size: 1.8em; /* Ícone maior */
+    margin-right: 15px;
+}
+
+.highlight-item p {
+    font-size: 1.15em; /* Texto do highlight maior */
+    color: #555;
+}
+
+/* --- Benefits Section --- */
+.benefits-section {
+    background-color: var(--bg-light);
+    padding: 120px 0; /* Mais espaçamento */
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px; /* Mais espaço entre os cards */
+    margin-top: 70px;
+}
+
+.benefit-card {
+    background-color: #fff;
+    padding: 40px; /* Mais padding */
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card .icon-wrapper {
+    font-size: 4em; /* Ícone maior */
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em; /* Título do benefício maior */
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.benefit-card p {
+    font-size: 1.15em; /* Texto do benefício maior */
+    color: #666;
+}
+
+/* --- Call To Action Banner --- */
+.call-to-action-banner {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 100px 0; /* Mais espaçamento */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.call-to-action-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4em; /* Título do banner maior */
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.call-to-action-banner p {
+    font-size: 1.8em; /* Texto do banner maior */
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: #fff;
+    padding: 120px 0; /* Mais espaçamento */
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Largura máxima maior para o carrossel */
+    margin: 0 auto 60px auto;
+    overflow: hidden;
+    border-radius: 20px; /* Bordas mais arredondadas */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-item {
+    flex: 0 0 100%;
+    padding: 50px; /* Mais padding */
+    text-align: center;
+    background-color: var(--bg-light);
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.08); /* Sombra interna mais aparente */
+}
+
+.testimonial-photo {
+    width: 140px; /* Foto maior */
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 5px solid var(--primary-color); /* Borda mais espessa */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-quote {
+    font-style: italic;
+    font-size: 1.4em; /* Depoimento maior */
+    margin-bottom: 30px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    font-size: 1.2em; /* Autor maior */
+    color: var(--primary-color);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo dos botões mais escuro */
+    color: #fff;
+    border: none;
+    padding: 18px 25px; /* Botões maiores */
+    font-size: 1.8em; /* Ícone do botão maior */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.prev-btn {
+    left: 15px; /* Mais afastado da borda */
+}
+
+.next-btn {
+    right: 15px; /* Mais afastado da borda */
+}
+
+.testimonials-cta {
+    font-size: 1.3em; /* Texto da CTA maior */
+    margin-top: 50px;
+    color: var(--text-dark);
+}
+
+.testimonials-cta a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.testimonials-cta a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    background-color: var(--bg-light);
+    padding: 120px 0; /* Mais espaçamento */
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 25px; /* Mais espaço entre os itens */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: block;
+    width: 100%;
+    padding: 30px 35px; /* Mais padding */
+    text-align: left;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.4em; /* Pergunta maior */
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding-right: 70px; /* Espaço para o ícone */
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 35px; /* Ícone mais afastado */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.7em; /* Ícone maior */
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active {
+    background-color: var(--secondary-color);
+}
+
+.faq-question.active::after {
+    content: '-';
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 35px; /* Padding inicial zero */
+    text-align: left;
+}
+
+.faq-answer p {
+    padding: 25px 0; /* Padding interno */
+    font-size: 1.2em; /* Resposta maior */
+    color: #555;
+    border-top: 1px solid rgba(0, 0, 0, 0.08); /* Linha divisória mais visível */
+}
+
+/* --- Footer --- */
+.footer-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 60px 0; /* Mais espaçamento */
+    text-align: center;
+    font-size: 1em; /* Texto maior */
+}
+
+.footer-section .social-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 25px; /* Mais espaço entre links */
+    font-size: 1.2em; /* Ícone social maior */
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-links a:hover {
+    color: var(--accent-color); /* Usando a cor de destaque para hover social */
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 4em;
+    }
+    .hero-subtitle {
+        font-size: 1.6em;
+    }
+    .section-title {
+        font-size: 3em;
+    }
+    .about-content {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .about-image {
+        width: 320px;
+        height: 320px;
+    }
+    .highlights-grid, .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .call-to-action-banner h2 {
+        font-size: 3.2em;
+    }
+    .call-to-action-banner p {
+        font-size: 1.5em;
+    }
+    .btn-hero {
+        padding: 20px 50px;
+        font-size: 1.4em;
+    }
+    .btn-section-cta {
+        padding: 18px 40px;
+        font-size: 1.2em;
+    }
+    .btn-banner-cta {
+        padding: 24px 60px;
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 150px 0;
+    }
+    .hero-title {
+        font-size: 3.2em;
+    }
+    .hero-subtitle {
+        font-size: 1.3em;
+    }
+    .section-title {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    .about-section, .benefits-section, .testimonials-section, .faq-section, .footer-section {
+        padding: 90px 0;
+    }
+    .testimonial-item {
+        padding: 35px;
+    }
+    .carousel-btn {
+        padding: 12px 18px;
+        font-size: 1.5em;
+    }
+    .faq-question {
+        font-size: 1.2em;
+        padding: 25px 60px 25px 30px;
+    }
+    .faq-question::after {
+        right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5em;
+    }
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+    .btn-primary, .btn-hero, .btn-section-cta, .btn-banner-cta {
+        padding: 15px 30px;
+        font-size: 1.1em;
+        width: 90%; /* Ocupa quase a largura total em telas pequenas */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .btn-banner-cta {
+        padding: 20px 40px;
+        font-size: 1.3em;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .about-image {
+        width: 280px;
+        height: 280px;
+    }
+    .call-to-action-banner h2 {
+        font-size: 2.5em;
+    }
+    .call-to-action-banner p {
+        font-size: 1.2em;
+    }
+    .carousel-container {
+        padding: 0 5px;
+    }
+    .prev-btn {
+        left: 0px;
+    }
+    .next-btn {
+        right: 0px;
+    }
+    .testimonial-item {
+        padding: 25px;
+    }
+}
+/* --- Benefits Section --- */
+.benefits-section {
+    background-color: var(--bg-light);
+    padding: 120px 0; /* Mais espaçamento */
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    /* Define colunas que se ajustam automaticamente */
+    /* Cada coluna terá no mínimo 300px e no máximo 1 fração do espaço disponível */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Espaço consistente entre os cartões */
+    margin-top: 70px;
+    justify-content: center; /* Centraliza os itens no grid se houver espaço extra */
+    align-items: stretch; /* Garante que todos os cartões tenham a mesma altura */
+}
+
+.benefit-card {
+    background-color: #fff;
+    padding: 40px; /* Mais padding */
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Transforma o cartão em um container flexbox */
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.benefit-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card .icon-wrapper {
+    font-size: 4em; /* Ícone maior */
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    line-height: 1; /* Garante alinhamento vertical correto do ícone */
+    display: inline-block; /* Para garantir que o line-height funcione bem */
+}
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em; /* Título do benefício maior */
+    margin-bottom: 18px;
+    color: var(--text-dark);
+    line-height: 1.2; /* Melhora a legibilidade de títulos com mais de uma linha */
+}
+
+.benefit-card p {
+    font-size: 1.15em; /* Texto do benefício maior */
+    color: #666;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante, empurrando o conteúdo para baixo */
+}
+
+/* Responsividade específica para a seção de benefícios, se necessário */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Em telas menores, um cartão por linha */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-card {
+        padding: 30px;
+    }
+    .benefit-card .icon-wrapper {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+    }
+    .benefit-card h3 {
+        font-size: 1.8em;
+    }
+    .benefit-card p {
+        font-size: 1em;
+    }
+}
